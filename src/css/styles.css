@@ -23,3 +23,25 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
+/* для галерї */
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  }
+  
+  .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  list-style-type: none;
+  width: 1128px;
+  
+  padding: 0;
+  }
+  
+  .gallery-image {
+  width: 360px;
+  height: 200px;
+  }
+  
