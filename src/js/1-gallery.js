@@ -81,26 +81,7 @@ const galleryMarkup = images.map(({preview, original, description}) => {
 
 gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
 
-let galleryLightbox = new SimpleLightbox('.gallery-link');
-galleryLightbox.on('show.simplelightbox', function () {
-
+new SimpleLightbox('.gallery-link', {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
-
-// `<div class="gallery">
-//     <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
-//     <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a>
-// </div>
-// `
-
-
-
-// gallery.addEventListener('click', function(event){
-//   event.preventDefault()
-
-//   if (event.target.nodeName !== 'IMG') return;
-//   const link = event.target.dataset.source 
-//   const instance = basicLightbox.create(`
-//     <img src=${link} width: 1112px; height: 640px;>
-//   `)
-//   instance.show()
-// })
