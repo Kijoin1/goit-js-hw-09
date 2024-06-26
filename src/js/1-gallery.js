@@ -68,27 +68,23 @@ const images = [
 
 const gallery = document.querySelector('ul.gallery');
 const galleryMarkup = images.map(({preview, original, description}) => {
-    return `<div class="gallery">
-    <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
-    <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a>
-</div>
-`
+    return `<li class="gallery-item">
+	<a class="gallery-link" href="${original}">
+		<img 
+			class="gallery-image" 
+			src="${preview}"
+			alt="${description}" 
+			/>
+	</a>
+</li>`
 }).join('');
 
-// `<li class="gallery-item">
-// 	<a class="gallery-link" href="${original}">
-// 		<img 
-// 			class="gallery-image" 
-// 			src="${preview}"
-// 			alt="${description}" 
-// 			/>
-// 	</a>
-// </li>
 
-<div class="gallery">
-    <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
-    <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a>
-</div>
+// `<div class="gallery">
+//     <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
+//     <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a>
+// </div>
+// `
 
 
 
