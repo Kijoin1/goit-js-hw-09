@@ -1,4 +1,4 @@
-import SimpleLightbox from "simplelightbox";
+import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
     {
@@ -79,6 +79,12 @@ const galleryMarkup = images.map(({preview, original, description}) => {
 </li>`
 }).join('');
 
+gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+
+let galleryLightbox = new SimpleLightbox('.gallery-link');
+galleryLightbox.on('show.simplelightbox', function () {
+
+});
 
 // `<div class="gallery">
 //     <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
@@ -87,9 +93,6 @@ const galleryMarkup = images.map(({preview, original, description}) => {
 // `
 
 
-
-
-// gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
 
 // gallery.addEventListener('click', function(event){
 //   event.preventDefault()
