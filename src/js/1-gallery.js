@@ -1,3 +1,5 @@
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
     {
       preview:
@@ -66,27 +68,40 @@ const images = [
 
 const gallery = document.querySelector('ul.gallery');
 const galleryMarkup = images.map(({preview, original, description}) => {
-    return `<li class="gallery-item">
-  <a class="gallery-link" href="${original}">
-    <img
-      class="gallery-image"
-      src="${preview}"
-      data-source="${original}"
-      alt="${description}"
-    />
-  </a>
-</li>`
+    return `<div class="gallery">
+    <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
+    <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a>
+</div>
+`
 }).join('');
 
-gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+// `<li class="gallery-item">
+// 	<a class="gallery-link" href="${original}">
+// 		<img 
+// 			class="gallery-image" 
+// 			src="${preview}"
+// 			alt="${description}" 
+// 			/>
+// 	</a>
+// </li>
 
-gallery.addEventListener('click', function(event){
-  event.preventDefault()
+<div class="gallery">
+    <a href="images/image1.jpg"><img src="images/thumbs/thumb1.jpg" alt="" title=""/></a>
+    <a href="images/image2.jpg"><img src="images/thumbs/thumb2.jpg" alt="" title="Beautiful Image"/></a>
+</div>
 
-  if (event.target.nodeName !== 'IMG') return;
-  const link = event.target.dataset.source 
-  const instance = basicLightbox.create(`
-    <img src=${link} width: 1112px; height: 640px;>
-  `)
-  instance.show()
-})
+
+
+
+// gallery.insertAdjacentHTML('afterbegin', galleryMarkup);
+
+// gallery.addEventListener('click', function(event){
+//   event.preventDefault()
+
+//   if (event.target.nodeName !== 'IMG') return;
+//   const link = event.target.dataset.source 
+//   const instance = basicLightbox.create(`
+//     <img src=${link} width: 1112px; height: 640px;>
+//   `)
+//   instance.show()
+// })

@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => {
     root: 'src',
     build: {
       sourcemap: true,
-
+      
       rollupOptions: {
         input: glob.sync('./src/public/index.html'),
         output: {
@@ -20,11 +20,11 @@ export default defineConfig(({ command }) => {
               return 'vendor';
             }
           },
-          entryFileNames: 'commonHelpers.js',
+          entryFileNames: '[name].js',
         },
       },
       outDir: '../dist',
     },
-    plugins: [injectHTML(), FullReload(['./src/**/**.html'])],
+    plugins: [injectHTML(), FullReload(['/src/**/**.html'])],
   };
 });
